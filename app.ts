@@ -10,11 +10,9 @@ app.use(cors())
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
-app.get('/', (req: Request, res: Response) => {
+app.get('/', (req: Request, res: Any) => {
   res.send('Hello World!')
 })
-app.get('/cow', (req: Request, res: Response) => {
-  res.send('cow World!')
-})
+
 
 export default app
