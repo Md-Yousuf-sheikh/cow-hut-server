@@ -1,25 +1,25 @@
 {
-    "keep": {
-        "days": true,
-        "amount": 14
+  "keep": {
+    "days": true,
+    "amount": 14
+  },
+  "auditLog": "C:\\Users\\MD YOUSUF SHEIKH\\Desktop\\New Server\\cow-hut-server\\logs\\winston\\successes\\.d48dc12148cb50f337af20f66a8bdfde08591850-audit.json",
+  "files": [
+    {
+      "date": 1698485425353,
+      "name": "C:\\Users\\MD YOUSUF SHEIKH\\Desktop\\New Server\\cow-hut-server\\logs\\winston\\successes\\phu-2023-28-10-15-success.log",
+      "hash": "b15c2a69906727814914e9e0bd2c6eb76685a45679b700d7d45bde1a838171e6"
     },
-    "auditLog": "C:\\Users\\MD YOUSUF SHEIKH\\Desktop\\New Server\\cow-hut-server\\logs\\winston\\successes\\.d48dc12148cb50f337af20f66a8bdfde08591850-audit.json",
-    "files": [
-        {
-            "date": 1698485425353,
-            "name": "C:\\Users\\MD YOUSUF SHEIKH\\Desktop\\New Server\\cow-hut-server\\logs\\winston\\successes\\phu-2023-28-10-15-success.log",
-            "hash": "b15c2a69906727814914e9e0bd2c6eb76685a45679b700d7d45bde1a838171e6"
-        },
-        {
-            "date": 1698489455289,
-            "name": "C:\\Users\\MD YOUSUF SHEIKH\\Desktop\\New Server\\cow-hut-server\\logs\\winston\\successes\\phu-2023-28-10-16-success.log",
-            "hash": "cf9384a3ae9d819fdc563603c06526ca9b47adf4c47e39f497cde6a25f83ffe1"
-        },
-        {
-            "date": 1698501750909,
-            "name": "C:\\Users\\MD YOUSUF SHEIKH\\Desktop\\New Server\\cow-hut-server\\logs\\winston\\successes\\phu-2023-28-10-20-success.log",
-            "hash": "c10d53fa44ae37cd0d7d87c82744b891218c0ea9dc207367c0b3061d515351ba"
-        }
-    ],
-    "hashType": "sha256"
+    {
+      "date": 1698489455289,
+      "name": "C:\\Users\\MD YOUSUF SHEIKH\\Desktop\\New Server\\cow-hut-server\\logs\\winston\\successes\\phu-2023-28-10-16-success.log",
+      "hash": "cf9384a3ae9d819fdc563603c06526ca9b47adf4c47e39f497cde6a25f83ffe1"
+    },
+    {
+      "date": 1698501750909,
+      "name": "C:\\Users\\MD YOUSUF SHEIKH\\Desktop\\New Server\\cow-hut-server\\logs\\winston\\successes\\phu-2023-28-10-20-success.log",
+      "hash": "c10d53fa44ae37cd0d7d87c82744b891218c0ea9dc207367c0b3061d515351ba"
+    }
+  ],
+  "hashType": "sha256"
 }

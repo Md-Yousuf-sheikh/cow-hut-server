@@ -1,25 +1,25 @@
 {
-    "keep": {
-        "days": true,
-        "amount": 14
+  "keep": {
+    "days": true,
+    "amount": 14
+  },
+  "auditLog": "C:\\Users\\MD YOUSUF SHEIKH\\Desktop\\New Server\\cow-hut-server\\logs\\winston\\errors\\.f2083796a8553eaab1f1e7dd60891e3980977241-audit.json",
+  "files": [
+    {
+      "date": 1698485425356,
+      "name": "C:\\Users\\MD YOUSUF SHEIKH\\Desktop\\New Server\\cow-hut-server\\logs\\winston\\errors\\phu-2023-28-10-15-error.log",
+      "hash": "be44b4712a889b236b7ef83c6fd9cd880862049a9f44e02cd2d3e4fa1a8f2c7b"
     },
-    "auditLog": "C:\\Users\\MD YOUSUF SHEIKH\\Desktop\\New Server\\cow-hut-server\\logs\\winston\\errors\\.f2083796a8553eaab1f1e7dd60891e3980977241-audit.json",
-    "files": [
-        {
-            "date": 1698485425356,
-            "name": "C:\\Users\\MD YOUSUF SHEIKH\\Desktop\\New Server\\cow-hut-server\\logs\\winston\\errors\\phu-2023-28-10-15-error.log",
-            "hash": "be44b4712a889b236b7ef83c6fd9cd880862049a9f44e02cd2d3e4fa1a8f2c7b"
-        },
-        {
-            "date": 1698489455293,
-            "name": "C:\\Users\\MD YOUSUF SHEIKH\\Desktop\\New Server\\cow-hut-server\\logs\\winston\\errors\\phu-2023-28-10-16-error.log",
-            "hash": "7f97d92432cc635bdf0ea0b18d9d5b1b797268cf8baa495630d2e0df410eac1f"
-        },
-        {
-            "date": 1698501750914,
-            "name": "C:\\Users\\MD YOUSUF SHEIKH\\Desktop\\New Server\\cow-hut-server\\logs\\winston\\errors\\phu-2023-28-10-20-error.log",
-            "hash": "abad027e3ac9f8c563b5885878b9835cd01d99f5b290e948ad53565f4c080aec"
-        }
-    ],
-    "hashType": "sha256"
+    {
+      "date": 1698489455293,
+      "name": "C:\\Users\\MD YOUSUF SHEIKH\\Desktop\\New Server\\cow-hut-server\\logs\\winston\\errors\\phu-2023-28-10-16-error.log",
+      "hash": "7f97d92432cc635bdf0ea0b18d9d5b1b797268cf8baa495630d2e0df410eac1f"
+    },
+    {
+      "date": 1698501750914,
+      "name": "C:\\Users\\MD YOUSUF SHEIKH\\Desktop\\New Server\\cow-hut-server\\logs\\winston\\errors\\phu-2023-28-10-20-error.log",
+      "hash": "abad027e3ac9f8c563b5885878b9835cd01d99f5b290e948ad53565f4c080aec"
+    }
+  ],
+  "hashType": "sha256"
 }
