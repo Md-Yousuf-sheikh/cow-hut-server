@@ -1,7 +1,9 @@
 import express, { Application, Request, Response } from 'express'
 import cors from 'cors'
-import userRouter from './app/modules/user/user.route'
 import globalErrorHandler from './app/middlewares/globalErrorHandler'
+import Routes from './app/routes'
+import sendResponse from './shared/sendResponse'
+import httpStatus from 'http-status'
 
 const app: Application = express()
 
@@ -14,10 +16,15 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
 //  Application routes
-app.use('/api/v1/users', userRouter)
+app.use('/api/v1/', Routes)
 
 app.get('/', async (req: Request, res: Response) => {
-  res.send('Hello World!')
+  // sendResponse
+  sendResponse(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: 'Server Running Successful ->  Cow Hut Server ',
+  })
 })
 // globalErrorHandler
 app.use(globalErrorHandler)

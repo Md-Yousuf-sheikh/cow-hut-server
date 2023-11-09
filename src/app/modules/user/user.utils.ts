@@ -4,9 +4,6 @@ export const findLastUserId = async () => {
   const lastUser = await User?.findOne({}, { id: 1, _id: 0 })
     .sort({ createdAt: -1 })
     .lean()
-
-  console.log('last user is', lastUser)
-
   return lastUser?.id
 }
 

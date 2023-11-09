@@ -1,5 +1,6 @@
 import { Model, Schema, model } from 'mongoose'
 import { IUser } from './user.interface'
+import { userRole } from './user.constant'
 
 type UserModel = Model<IUser, object>
 
@@ -23,6 +24,7 @@ const userSchema = new Schema<IUser>(
     role: {
       type: String,
       required: true,
+      enum: userRole,
     },
     phoneNumber: {
       type: String,

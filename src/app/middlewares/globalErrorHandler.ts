@@ -33,7 +33,8 @@ const globalErrorHandler: ErrorRequestHandler = (
   } else if (error instanceof ZodError) {
     const simplifiedError = handleZodError(error)
     statusCode = simplifiedError.statusCode
-    message = simplifiedError.message
+    // message = simplifiedError?.message
+    message = simplifiedError?.errorMessages[0]?.message
     errorMessages = simplifiedError.errorMessages
   } else if (error instanceof ApiError) {
     statusCode = error?.statusCode
