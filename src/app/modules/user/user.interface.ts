@@ -1,7 +1,7 @@
 export type IUserRole = 'seller' | 'buyer'
 
 export type IUser = {
-  id: string
+  id?: string
   name: {
     firstName: string
     lastName?: string

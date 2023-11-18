@@ -47,10 +47,16 @@ const userSchema = new Schema<IUser>(
     password: {
       type: String,
       required: true,
+      select: false, // Exclude from queries by default
     },
   },
   {
     timestamps: true,
+    toJSON: {
+      transform: (doc, ret) => {
+        delete ret.password // Exclude password from the JSON representation
+      },
+    },
   },
 )
 

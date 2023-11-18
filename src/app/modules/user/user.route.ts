@@ -5,8 +5,12 @@ import { UserValidationSchema } from './user.validation'
 
 const router = express.Router()
 
+router.get('/:id', userController.getSingleUser)
+router.delete('/:id', userController.deleteSingleUser)
+router.patch('/:id', userController.updateSingleUser)
+router.get('/', userController.getUser)
 router.post(
-  '/create-user',
+  '/signup',
   validateRequest(UserValidationSchema.UserValidationZodSchema),
   userController.createUser,
 )

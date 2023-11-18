@@ -2,7 +2,7 @@ import { Model, Schema, model } from 'mongoose'
 import { ICow } from './cow.interface'
 import { cowBreed, cowCategory, cowLabel, cowLocation } from './cow.constant'
 
-type CowModel = Model<ICow & object>
+type CowModel = Model<ICow, Record<string, unknown>>
 
 const cowSchema = new Schema<ICow>(
   {
@@ -43,12 +43,17 @@ const cowSchema = new Schema<ICow>(
       enum: cowCategory, // enum and cow category
     },
     seller: {
-      type: String,
+      type: Schema.Types.ObjectId,
+      ref: 'User',
+      required: true,
     },
   },
   {
     timestamps: true,
+    toJSON: {
+      virtuals: true,
+    },
   },
 )
 
-export const Cow = model<CowModel>('Cow', cowSchema)
+export const Cow = model<ICow>('Cow', cowSchema)

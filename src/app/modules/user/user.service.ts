@@ -3,6 +3,8 @@ import { IUser } from './user.interface'
 import { User } from './user.model'
 import { generateUserId } from './user.utils'
 import httpStatus from 'http-status'
+
+//  create user
 const createUser = async (user: IUser): Promise<IUser | null> => {
   //  auto generate increment id
   const id = await generateUserId()
@@ -19,8 +21,35 @@ const createUser = async (user: IUser): Promise<IUser | null> => {
 
   return userResult
 }
-
-export default { createUser }
+// get single user
+const getSingleUser = async (id: string) => {
+  const result = await User.findById(id)
+  return result as IUser | null
+}
+// get single user
+const getUsers = async () => {
+  const result = await User.find({})
+  return result
+}
+// delete single user
+const deleteSingleUser = async (id: string) => {
+  const result = await User.findByIdAndDelete(id)
+  return result
+}
+// update single user
+const updateSingleUser = async (id: string, payload: Partial<IUser>) => {
+  const result = await User.findByIdAndUpdate({ _id: id }, payload, {
+    new: true,
+  })
+  return result as IUser | null
+}
+export default {
+  createUser,
+  getSingleUser,
+  deleteSingleUser,
+  getUsers,
+  updateSingleUser,
+}
 
 // {
 //     "name": {

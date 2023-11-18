@@ -1,3 +1,6 @@
+import { Schema, Types } from 'mongoose'
+import { IUser } from '../user/user.interface'
+
 export type ICowLocations =
   | 'Dhaka'
   | 'Chattogram'
@@ -29,5 +32,5 @@ export type ICow = {
   weight: string
   label?: ICowLabels
   category: ICowCategory
-  seller?: string
+  seller: Schema.Types.ObjectId
 }
