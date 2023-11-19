@@ -3,6 +3,8 @@ import userService from './user.service'
 import catchAsync from '../../../shared/catchAsync'
 import httpStatus from 'http-status'
 import sendResponse from '../../../shared/sendResponse'
+import pick from '../../../shared/pick'
+import { paginationFiled } from '../../../constant/pagination'
 
 //  create user
 const createUser = catchAsync(
@@ -24,13 +26,16 @@ const createUser = catchAsync(
 //  get single user
 const getUser = catchAsync(
   async (req: Request, res: Response, next: NextFunction) => {
-    const result = await userService.getUsers()
+    const paginationOption = pick(req.query, paginationFiled)
+    const result = await userService.getUsers(paginationOption)
+
     //   response
     sendResponse(res, {
       statusCode: httpStatus.OK,
       success: true,
       message: 'Users retrieved successfully',
-      data: result,
+      meta: result?.meta,
+      data: result?.data,
     })
   },
 )

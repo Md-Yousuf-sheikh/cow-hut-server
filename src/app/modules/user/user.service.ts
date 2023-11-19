@@ -1,5 +1,8 @@
+import { SortOrder } from 'mongoose'
 import ApiError from '../../../errors/ApiError'
-import { IUser } from './user.interface'
+import { paginationHelper } from '../../../helpers/paginationHelper'
+import { IGenericResponse } from '../../../interfaces/common'
+import { IPaginationOptions, IUser } from './user.interface'
 import { User } from './user.model'
 import { generateUserId } from './user.utils'
 import httpStatus from 'http-status'
@@ -27,9 +30,31 @@ const getSingleUser = async (id: string) => {
   return result as IUser | null
 }
 // get single user
-const getUsers = async () => {
-  const result = await User.find({})
-  return result
+const getUsers = async (
+  paginationOption: IPaginationOptions,
+): Promise<IGenericResponse<IUser[]>> => {
+  const { skip, limit, page, sortBy, sortOrder } =
+    paginationHelper.calculatePagination(paginationOption)
+
+  const sortCondition: { [key: string]: SortOrder } = {}
+  if (sortBy && sortOrder) {
+    sortCondition[sortBy] = sortOrder
+  }
+
+  const result = await User.find()
+    .skip(skip)
+    .limit(limit)
+    .sort(sortCondition)
+    .lean()
+
+  return {
+    meta: {
+      page,
+      limit,
+      total: 10,
+    },
+    data: result as unknown as IUser[],
+  }
 }
 // delete single user
 const deleteSingleUser = async (id: string) => {
