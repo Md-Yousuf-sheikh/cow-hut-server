@@ -8,13 +8,21 @@ const calculatePagination = (options: Partial<IOptions>): IOptionsResult => {
   //   sortBy
   const sortBy = options.sortBy || 'createdAt'
   const sortOrder = options.sortOrder || 'desc'
+  const minPrice = Number(options.minPrice) || undefined
+  const maxPrice = Number(options.maxPrice) || undefined
+  const location = options.location
+  //
+  //   console.log('options', options)
 
   return {
-    page,
-    limit,
     skip,
+    limit,
+    page,
     sortBy,
     sortOrder,
+    minPrice,
+    maxPrice,
+    location,
   }
 }
 

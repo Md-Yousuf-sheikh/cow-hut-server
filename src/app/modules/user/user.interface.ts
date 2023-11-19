@@ -22,6 +22,9 @@ export type IPaginationOptions = {
   limit?: number
   sortBy?: string
   sortOrder?: 'asc' | 'desc'
+  minPrice?: number
+  maxPrice?: number
+  location?: string
 }
 
 // Define a type for pagination options
@@ -31,6 +34,9 @@ export type IOptionsResult = {
   skip: number
   sortBy: string
   sortOrder: SortOrder
+  minPrice?: number
+  maxPrice?: number
+  location?: string
 }
 
 // Define a type for pagination options
@@ -39,4 +45,7 @@ export type IOptions = {
   limit: number
   sortBy: string
   sortOrder: SortOrder
+  minPrice?: number
+  maxPrice?: number
+  location?: string
 }

@@ -33,15 +33,26 @@ const getSingleUser = async (id: string) => {
 const getUsers = async (
   paginationOption: IPaginationOptions,
 ): Promise<IGenericResponse<IUser[]>> => {
-  const { skip, limit, page, sortBy, sortOrder } =
+  const { skip, limit, page, sortBy, sortOrder, minPrice, maxPrice, location } =
     paginationHelper.calculatePagination(paginationOption)
 
   const sortCondition: { [key: string]: SortOrder } = {}
   if (sortBy && sortOrder) {
     sortCondition[sortBy] = sortOrder
   }
-
-  const result = await User.find()
+  //
+  // Build additional filters for minPrice, maxPrice, and location
+  const filters: any = {}
+  if (minPrice !== undefined) {
+    filters.budget = { $gte: minPrice }
+  }
+  if (maxPrice !== undefined) {
+    filters.budget = { ...filters.budget, $lte: maxPrice }
+  }
+  if (location) {
+    filters.address = { $regex: new RegExp(location, 'i') }
+  }
+  const result = await User.find({ ...filters })
     .skip(skip)
     .limit(limit)
     .sort(sortCondition)
