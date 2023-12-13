@@ -67,7 +67,7 @@ userSchema.methods.isUserExist = async function (
 ): Promise<Partial<IUser> | null | unknown> {
   const user = await User.findOne(
     { phoneNumber },
-    { phoneNumber: 1, password: 1 },
+    { phoneNumber: 1, password: 1, role: 1 },
   )
   return user
 }

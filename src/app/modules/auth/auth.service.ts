@@ -26,12 +26,13 @@ const loginAuthUser = async (payload: ILoginUser) => {
 
   //  match password
   if (!isPasswordMatch) {
-    console.log('isPasswordMatch', !isPasswordMatch)
-
     throw new ApiError(httpStatus.BAD_REQUEST, 'Password dose not match!')
   }
 
   const { role } = isUserExist
+
+  console.log('isUserExist', isUserExist)
+
   // access Token
   const accessToken = jwtHelpers.createToken(
     {
@@ -78,8 +79,6 @@ const refreshToken = async (token: string): Promise<IRefreshTokenResponse> => {
   }
   // checking  delete user refresh token
   const { phoneNumber, role } = verifiedToken
-
-  console.log('verifiedToken', verifiedToken)
 
   // user checking is exist
   const isUserExist = await user.isUserExist(phoneNumber)

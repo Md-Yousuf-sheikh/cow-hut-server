@@ -18,8 +18,6 @@ const createUser = catchAsync(
       message: 'Users created successfully',
       data: result,
     })
-    //  next
-    // next()
   },
 )
 //  get single user
