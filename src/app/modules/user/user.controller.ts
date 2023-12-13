@@ -27,6 +27,7 @@ const getUser = catchAsync(
   async (req: Request, res: Response, next: NextFunction) => {
     const paginationOption = pick(req.query, paginationFiled)
     const result = await userService.getUsers(paginationOption)
+    console.log('result', req.cookies)
 
     //   response
     sendResponse(res, {

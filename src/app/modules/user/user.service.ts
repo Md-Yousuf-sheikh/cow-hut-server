@@ -12,9 +12,13 @@ const createUser = async (user: IUser): Promise<IUser | null> => {
   //  auto generate increment id
   const id = await generateUserId()
   user.id = id ?? '0001'
-
+  //  password hash
+  // user.password = await bcrypt.hash(
+  //   user?.password,
+  //   Number(config.bcrypt_salt_rounds),
+  // )
+  //  create
   const createdUser = await User.create(user)
-
   // Type casting to IUser
   const userResult: IUser | null = createdUser as unknown as IUser
 

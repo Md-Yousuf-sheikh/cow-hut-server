@@ -1,5 +1,4 @@
 import { Schema, Types } from 'mongoose'
-import { IUser } from '../user/user.interface'
 
 export type ICowLocations =
   | 'Dhaka'

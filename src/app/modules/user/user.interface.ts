@@ -1,4 +1,4 @@
-import { SortOrder } from 'mongoose'
+import { Model, SortOrder } from 'mongoose'
 
 export type IUserRole = 'seller' | 'buyer'
 
@@ -49,3 +49,14 @@ export type IOptions = {
   maxPrice?: number
   location?: string
 }
+
+// /
+interface IUserMethod {
+  isUserExist(phoneNumber: string): Promise<Partial<IUser>>
+  isUserPasswordMatch(
+    givenPassword: string,
+    savedPassword: string | undefined,
+  ): Promise<boolean>
+}
+
+export type UserModel = Model<IUser, Record<string, unknown>, IUserMethod>

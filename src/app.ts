@@ -4,6 +4,7 @@ import globalErrorHandler from './app/middlewares/globalErrorHandler'
 import Routes from './app/routes'
 import sendResponse from './shared/sendResponse'
 import httpStatus from 'http-status'
+import cookieParser from 'cookie-parser'
 
 const app: Application = express()
 
@@ -12,8 +13,10 @@ app.use(cors())
 // console.log(app.get('env'))
 
 // parse
+
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
+app.use(cookieParser())
 
 //  Application routes
 app.use('/api/v1/', Routes)
@@ -28,5 +31,4 @@ app.get('/', async (req: Request, res: Response) => {
 })
 // globalErrorHandler
 app.use(globalErrorHandler)
-
 export default app
