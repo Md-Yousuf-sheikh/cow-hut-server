@@ -64,8 +64,9 @@ const loginAuthUser = async (payload: ILoginUser) => {
 
 // refresh Token
 const refreshToken = async (token: string): Promise<IRefreshTokenResponse> => {
-  let verifiedToken = null
   const user = new User()
+
+  let verifiedToken = null
   //
   try {
     verifiedToken = jwtHelpers.verifiedToken(
@@ -75,7 +76,7 @@ const refreshToken = async (token: string): Promise<IRefreshTokenResponse> => {
 
     // delete user refresh token
   } catch (error) {
-    throw new ApiError(httpStatus.FORBIDDEN, 'Invalided refresh token!')
+    throw new ApiError(httpStatus.FORBIDDEN, 'Invalided Refresh Token!')
   }
   // checking  delete user refresh token
   const { phoneNumber, role } = verifiedToken

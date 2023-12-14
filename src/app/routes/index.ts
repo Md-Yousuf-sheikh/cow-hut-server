@@ -1,7 +1,7 @@
 import express from 'express'
 import userRouter from '../modules/user/user.route'
 import authRouter from '../modules/auth/auth.route'
-import cowsRouter from '../modules/auth/auth.route'
+import cowsRouter from '../modules/cow/cow.route'
 import orderRouter from '../modules/order/order.route'
 
 const router = express.Router()
