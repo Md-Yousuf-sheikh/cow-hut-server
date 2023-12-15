@@ -1,8 +1,9 @@
 import express from 'express'
-import userRouter from '../modules/user/user.route'
-import authRouter from '../modules/auth/auth.route'
 import cowsRouter from '../modules/cow/cow.route'
+import authRouter from '../modules/auth/auth.route'
+import userRouter from '../modules/user/user.route'
 import orderRouter from '../modules/order/order.route'
+import adminsRouter from '../modules/admins/admin.route'
 
 const router = express.Router()
 
@@ -27,6 +28,10 @@ const moduleRouts = [
   {
     path: '/orders',
     route: orderRouter,
+  },
+  {
+    path: '/admins',
+    route: adminsRouter,
   },
 ]
 
